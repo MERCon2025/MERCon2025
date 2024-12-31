@@ -117,10 +117,12 @@
   object-fit: cover;
   -o-object-position: top;
   object-position: top;
+  
 }
 .stroke {
   border: 2px solid #21334b;
   padding: 3px;
+  
 }
 h2 {
   text-transform: uppercase;
@@ -197,110 +199,36 @@ h4 {
   padding: 0;
 }
 body {
-  font-family: "Gorgia", sans-serif;
+  font-family: "Georgia", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-image: url("../img/Frame2.png");
-  background-size: 100%;
+  background-color: #000000; /* Fallback color */
   color: #ffffff;
-  background-color: #000000;
+  position: relative; /* Required for pseudo-element positioning */
+  margin: 0; /* Ensure no gaps */
+  padding: 0;
 }
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/Frame2.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Adjust this value for transparency */
+  z-index: -1; /* Place the pseudo-element behind the content */
+}
+
+
 p,
 h4 {
   transition: all 0.3s ease-in-out;
 }
-/* nav {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.29);
-  height: 60px;
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-  position: fixed;
-  z-index: 1;
-  font-weight: 100;
-  align-content: center;
-  justify-content: center;
-  color: #fff;
-}
-nav img {
-  padding: 15px;
-  flex: 2;
-  margin: auto;
-  -o-object-fit: contain;
-  object-fit: contain;
-  height: 100%;
-  width: auto;
-}
-nav ul {
-  float: right;
-  margin-right: 40px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-nav ul li {
-  display: inline-block;
-  margin: 0 5px;
-  text-align: center;
-  position: relative;
-  align-self: center;
-  text-transform: uppercase;
-  padding: 7px 10px;
-  font-size: 14px;
-}
-nav ul li a {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-nav ul li ul {
-  display: none;
-  position: absolute;
-  height: auto;
-  width: 300px;
-  top: 100%;
-  left: 0;
-  background-color: #410d35;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-}
-nav ul li ul li {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  padding: 5px 0;
-  text-align: start;
-  text-transform: uppercase;
-  padding: 7px 10px;
-  font-size: 14px;
-}
-nav ul li ul li a {
-  display: block;
-  width: 100%;
-}
-nav ul li ul li:hover {
-  background-color: #5c022f;
-}
-nav ul li:hover {
-  background: #5c022f;
-}
-nav ul li:hover > ul {
-  opacity: 1;
-  display: block;
-}
-nav .checkbtn {
-  font-size: 30px;
-  color: #fff;
-  float: right;
-  line-height: 60px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-nav #check {
-  display: none;
-} */
+
 .hero {
   background-image: url("../img/Frame1.png");
   background-size: cover;
@@ -331,6 +259,7 @@ nav #check {
   margin: auto;
   max-width: 750px;
   padding: 0 40px;
+  
 }
 .hero .hero-content h4 {
   font-weight: 100;
@@ -370,6 +299,7 @@ nav #check {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 100px;
+
 
 }
 
